@@ -1,0 +1,13 @@
+{
+  "id": "WP001",
+  "control": {
+    "type": "Change Management",
+    "objective": "Ensure production changes are approved"
+  },
+  "controlDesign": {
+    "description": "CRB reviews all production changes before deployment"
+  },
+  "risk": {
+    "statement": "Unauthorized production changes"
+  }
+}
