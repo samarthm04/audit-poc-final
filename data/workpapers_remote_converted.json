@@ -1,0 +1,1070 @@
+[
+  {
+    "id": "WP-001",
+    "system": {
+      "os": "Windows",
+      "database": "N/A",
+      "applicationType": "Directory Services"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "controlDesign": {
+        "description": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "evidenceRequired": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-002",
+    "system": {
+      "os": "Windows",
+      "database": "N/A",
+      "applicationType": "Directory Services"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "controlDesign": {
+        "description": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "evidenceRequired": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-003",
+    "system": {
+      "os": "Windows",
+      "database": "N/A",
+      "applicationType": "Directory Services"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "controlDesign": {
+        "description": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "evidenceRequired": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-004",
+    "system": {
+      "os": "Windows",
+      "database": "N/A",
+      "applicationType": "Directory Services"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "controlDesign": {
+        "description": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "evidenceRequired": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-005",
+    "system": {
+      "os": "Windows",
+      "database": "N/A",
+      "applicationType": "Directory Services"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "controlDesign": {
+        "description": "Based on discussions with the IT Infrastructure Manager, the organization uses Active Directory to centrally manage user accounts and authentication. HR communicates employee termination or transfer details to the IT support team through the HRMS system. Upon receiving notification, the IT administrator disables the user account within Active Directory and removes associated privileged access where applicable.",
+        "frequency": "Event Based",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained the list of terminated employees during the audit period.",
+        "Selected a sample of users for testing.",
+        "Verified HR termination dates against AD account disablement dates.",
+        "Inspected screenshots and logs evidencing account disablement.",
+        "Verified whether privileged access was also revoked."
+      ],
+      "evidenceRequired": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-006",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Change Management"
+    },
+    "control": {
+      "type": "Change Management",
+      "subType": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "controlDesign": {
+        "description": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "evidenceRequired": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ]
+    },
+    "risk": {
+      "statement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "category": "Operational and Security"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-007",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Change Management"
+    },
+    "control": {
+      "type": "Change Management",
+      "subType": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "controlDesign": {
+        "description": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "evidenceRequired": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ]
+    },
+    "risk": {
+      "statement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "category": "Operational and Security"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-008",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Change Management"
+    },
+    "control": {
+      "type": "Change Management",
+      "subType": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "controlDesign": {
+        "description": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "evidenceRequired": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ]
+    },
+    "risk": {
+      "statement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "category": "Operational and Security"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-009",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Change Management"
+    },
+    "control": {
+      "type": "Change Management",
+      "subType": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "controlDesign": {
+        "description": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "evidenceRequired": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ]
+    },
+    "risk": {
+      "statement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "category": "Operational and Security"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-010",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Change Management"
+    },
+    "control": {
+      "type": "Change Management",
+      "subType": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Architecture Review Board (ARB) prior to implementation.",
+      "controlDesign": {
+        "description": "Management explained that all significant infrastructure and application architecture changes are routed through the Architecture Review Board. The ARB evaluates security, scalability, compliance, and operational impact before approval.",
+        "frequency": "Periodic",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained the list of architecture changes.",
+        "Selected sample changes.",
+        "Verified ARB approvals prior to implementation.",
+        "Inspected ARB meeting minutes and approval evidence.",
+        "Verified implementation timelines against approval timestamps."
+      ],
+      "evidenceRequired": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ]
+    },
+    "risk": {
+      "statement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "category": "Operational and Security"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-011",
+    "system": {
+      "os": "Windows",
+      "database": "SQL Server",
+      "applicationType": "Database Management"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "controlDesign": {
+        "description": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "evidenceRequired": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-012",
+    "system": {
+      "os": "Windows",
+      "database": "SQL Server",
+      "applicationType": "Database Management"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "controlDesign": {
+        "description": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "evidenceRequired": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-013",
+    "system": {
+      "os": "Windows",
+      "database": "SQL Server",
+      "applicationType": "Database Management"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "controlDesign": {
+        "description": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "evidenceRequired": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-014",
+    "system": {
+      "os": "Windows",
+      "database": "SQL Server",
+      "applicationType": "Database Management"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "controlDesign": {
+        "description": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "evidenceRequired": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-015",
+    "system": {
+      "os": "Windows",
+      "database": "SQL Server",
+      "applicationType": "Database Management"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "controlDesign": {
+        "description": "The Database Administration team performs quarterly reviews of SQL user access listings. Access reports are generated from the database management console and reviewed by database owners.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained SQL user access review reports.",
+        "Verified evidence of quarterly review.",
+        "Checked reviewer approvals.",
+        "Verified remediation actions for terminated or excessive access."
+      ],
+      "evidenceRequired": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-016",
+    "system": {
+      "os": "Windows",
+      "database": "SQL Server",
+      "applicationType": "Database Management"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "controlDesign": {
+        "description": "The Database Administration team performs quarterly reviews of SQL user access listings. Access reports are generated from the database management console and reviewed by database owners.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained SQL user access review reports.",
+        "Verified evidence of quarterly review.",
+        "Checked reviewer approvals.",
+        "Verified remediation actions for terminated or excessive access."
+      ],
+      "evidenceRequired": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-017",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Access Governance"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "controlDesign": {
+        "description": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "evidenceRequired": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-018",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Access Governance"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "controlDesign": {
+        "description": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "evidenceRequired": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-019",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Access Governance"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "controlDesign": {
+        "description": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "evidenceRequired": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-020",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Access Governance"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "controlDesign": {
+        "description": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+        "frequency": "Per Change",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "evidenceRequired": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  },
+  {
+    "id": "WP-021",
+    "system": {
+      "os": "N/A",
+      "database": "N/A",
+      "applicationType": "Access Governance"
+    },
+    "control": {
+      "type": "Access Management",
+      "subType": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "controlDesign": {
+        "description": "Application owners receive quarterly access review reports generated from the IAM system. Managers validate whether users retain appropriate access based on current job responsibilities.",
+        "frequency": "Quarterly",
+        "owner": "Inferred from workpaper narrative"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtained quarterly access review reports.",
+        "Selected sample users.",
+        "Verified management sign-off.",
+        "Checked whether inappropriate access was removed timely."
+      ],
+      "evidenceRequired": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "category": "Logical Access"
+    },
+    "auditContext": {
+      "industry": "N/A",
+      "framework": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "year": 2026
+    },
+    "qualitySignals": {
+      "reviewStatus": "Ready for reasoning-agent ingestion",
+      "usageCount": 0
+    }
+  }
+]

@@ -1,0 +1,35 @@
+"""Central configuration: loads .env and exposes typed constants.
+
+This module explicitly searches for a .env file in the repository root and in
+the `audit_poc/` subdirectory so environment loading works regardless of the
+current working directory used when launching Streamlit.
+"""
+
+import logging
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
+
+# Candidate locations to look for a .env file (repo root, audit_poc/.env)
+_HERE = Path(__file__).resolve().parent
+_CANDIDATES = [_HERE / ".env", _HERE / "audit_poc" / ".env"]
+
+loaded = False
+for _p in _CANDIDATES:
+    if _p.exists():
+        load_dotenv(dotenv_path=str(_p))
+        logger.debug("Loaded environment from %s", _p)
+        loaded = True
+        break
+
+# Fallback to default behaviour (searching parent dirs / cwd)
+if not loaded:
+    load_dotenv()
+
+MISTRAL_API_KEY: str | None = os.getenv("MISTRAL_API_KEY") or None
+
+if MISTRAL_API_KEY is None:
+    logger.warning("MISTRAL_API_KEY is not set — LLM calls will use mock responses")

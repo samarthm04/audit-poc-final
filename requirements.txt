@@ -1,0 +1,7 @@
+streamlit
+chromadb
+requests
+python-dotenv
+pytest
+pytest-mock
+python-docx

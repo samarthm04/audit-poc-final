@@ -1,0 +1,362 @@
+[
+  {
+    "id": "WP001",
+    "system": { "os": "Windows", "database": "SQL Server", "applicationType": "Web App" },
+    "control": {
+      "type": "Access Management",
+      "subType": "User Provisioning",
+      "objective": "Ensure new user accounts are created with appropriate access rights based on approved role definitions and the principle of least privilege.",
+      "controlDesign": {
+        "description": "New user provisioning is initiated via an approved IT access request form. The IT Security team reviews and approves the request, creates the Active Directory account, and assigns SQL Server role memberships based on the job-role entitlement matrix. All provisioning actions are logged in the service desk ticketing system with approver details.",
+        "frequency": "On demand",
+        "owner": "IT Security"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain a sample of new user provisioning requests raised during the audit period from the service desk system.",
+        "Verify that each request has a completed and approved access request form signed by the user's line manager.",
+        "Confirm that the Active Directory account was created within the SLA defined by policy (typically 1 business day of approval).",
+        "Validate that SQL Server role assignments match the approved entitlement matrix for the user's job function.",
+        "Check that provisioning records are logged in the service desk system with appropriate approval evidence.",
+        "Review whether any accounts were provisioned with elevated or administrator rights and confirm secondary approval was obtained from IT Security Manager."
+      ],
+      "evidenceRequired": [
+        "Approved IT access request forms with manager sign-off",
+        "Active Directory account creation logs with timestamps",
+        "SQL Server role membership report for the audit period",
+        "Service desk ticket extract showing approver details",
+        "Job-role entitlement matrix (current version)"
+      ]
+    },
+    "risk": {
+      "statement": "Without proper authorisation controls, accounts may be provisioned with excessive privileges, increasing the risk of unauthorised data access and segregation of duties violations.",
+      "category": "Security"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "ISO 27001"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 9 }
+  },
+  {
+    "id": "WP002",
+    "system": { "os": "Linux", "database": "Oracle", "applicationType": "ERP" },
+    "control": {
+      "type": "Access Management",
+      "subType": "Access Revocation",
+      "objective": "Ensure that user access to Oracle ERP and Linux systems is revoked promptly upon employee termination to prevent unauthorised access by former employees.",
+      "controlDesign": {
+        "description": "Upon employee termination, Workday triggers an automated deprovisioning workflow that disables the Oracle ERP account and Linux LDAP account. For involuntary terminations, access is revoked immediately; for voluntary terminations, within 24 hours of the last working day. HR sends a manual confirmation email to IT Security as a secondary control. A monthly reconciliation log is reviewed to identify and remediate any exceptions.",
+        "frequency": "On demand",
+        "owner": "IT Security"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain a listing of all employee terminations during the audit period from HR (Workday export) and identify the termination date and type (voluntary or involuntary) for each.",
+        "Obtain Oracle ERP account disable logs and Linux LDAP account disable records for the same period and cross-reference against the HR termination listing.",
+        "Compare the timestamp of account disablement to the termination date and verify compliance with the applicable SLA: immediate for involuntary terminations and within 24 hours for voluntary terminations.",
+        "Validate that full disablement was performed — confirm account lock, removal from all Oracle application roles and Linux LDAP groups, and active session termination.",
+        "Review HR confirmation email evidence to verify that the notification workflow was executed for each termination event.",
+        "Inspect the monthly reconciliation log to confirm that any exceptions were identified, escalated to the IT Security Manager, and remediated within the agreed timeframe."
+      ],
+      "evidenceRequired": [
+        "Workday termination export listing with termination dates and classification (voluntary/involuntary)",
+        "Oracle ERP and Linux LDAP account disable logs with timestamps",
+        "Service desk tickets associated with each termination deprovisioning event",
+        "HR confirmation email notifications sent to IT Security",
+        "Monthly access reconciliation report and exception register with remediation evidence"
+      ]
+    },
+    "risk": {
+      "statement": "Failure to promptly revoke access for terminated employees exposes the organisation to risks of data theft, fraud, and regulatory non-compliance under GDPR and SOX requirements.",
+      "category": "Security"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "GDPR"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 12 }
+  },
+  {
+    "id": "WP003",
+    "system": { "os": "Windows", "database": "Oracle", "applicationType": "Core Banking" },
+    "control": {
+      "type": "Access Management",
+      "subType": "Privileged Access",
+      "objective": "Ensure that privileged and administrator accounts on Windows servers and the Oracle database are strictly controlled, monitored, and limited to authorised personnel.",
+      "controlDesign": {
+        "description": "Privileged access to Windows servers and Oracle database administrator accounts is managed through a Privileged Access Management (PAM) solution. All privileged sessions are recorded and stored for 12 months. Access provisioning requires dual approval from the IT Security Manager and the CISO. Quarterly reviews of all privileged account listings are conducted and formally certified by IT Security.",
+        "frequency": "Quarterly review; on demand for new access",
+        "owner": "IT Security"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain the privileged account listing from the PAM solution and Active Directory for Windows administrator accounts and Oracle DBA accounts.",
+        "Verify that each privileged account has a corresponding dual-approval authorisation on file with IT Security Manager and CISO sign-off.",
+        "Select a sample of privileged sessions from PAM session recordings and confirm that session logs are complete, timestamped, and unmodified.",
+        "Review the most recent quarterly privileged access certification report and confirm it was completed and formally signed off within the required timeframe.",
+        "Identify any accounts that failed certification or were flagged for removal and verify that they were disabled within the agreed SLA."
+      ],
+      "evidenceRequired": [
+        "PAM solution privileged account listing with account owners",
+        "Dual-approval authorisation forms for each privileged account",
+        "PAM session recording samples and audit trail integrity evidence",
+        "Quarterly privileged access certification report with sign-off"
+      ]
+    },
+    "risk": {
+      "statement": "Uncontrolled privileged access increases the risk of insider threat, unauthorised configuration changes, and data exfiltration from core banking systems.",
+      "category": "Security"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "PCI-DSS"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 7 }
+  },
+  {
+    "id": "WP004",
+    "system": { "os": "Windows", "database": "SQL Server", "applicationType": "Web App" },
+    "control": {
+      "type": "Change Management",
+      "subType": "Emergency Change",
+      "objective": "Ensure that emergency changes to Windows-based web applications and SQL Server databases are authorised, tested, and documented to minimise unplanned service disruptions.",
+      "controlDesign": {
+        "description": "Emergency changes are initiated via an Emergency Change Request (ECR) form with verbal approval from the Change Manager and IT Director. Changes are implemented by a senior engineer with post-implementation testing completed within 4 hours. Full documentation and retrospective CAB approval must be completed within 48 hours of implementation.",
+        "frequency": "On demand",
+        "owner": "Change Management"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain the emergency change register for the audit period and identify all emergency change records raised.",
+        "For each sampled emergency change, verify that an ECR form exists with verbal approval documented and formal sign-off from the Change Manager and IT Director within 48 hours.",
+        "Confirm that post-implementation testing was performed and test results are documented within the required 4-hour window.",
+        "Verify that retrospective CAB approval was obtained within 48 hours and that the change was formally closed in the change management system.",
+        "Review SQL Server database change scripts for sampled changes and confirm they match the approved ECR scope without unauthorised deviations."
+      ],
+      "evidenceRequired": [
+        "Emergency change register extract for the audit period",
+        "Completed ECR forms with approval sign-offs from Change Manager and IT Director",
+        "Post-implementation test results documentation with timestamps",
+        "CAB meeting minutes showing retrospective approval"
+      ]
+    },
+    "risk": {
+      "statement": "Inadequate controls over emergency changes increase the risk of system instability, data corruption, and bypassing of standard security controls.",
+      "category": "Operational"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "ITIL"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 5 }
+  },
+  {
+    "id": "WP005",
+    "system": { "os": "Linux", "database": "SQL Server", "applicationType": "Middleware" },
+    "control": {
+      "type": "Change Management",
+      "subType": "Standard Change",
+      "objective": "Ensure that standard changes to Linux middleware and SQL Server are planned, tested, approved by the CAB, and implemented without unauthorised deviations.",
+      "controlDesign": {
+        "description": "Standard changes follow a defined RFC (Request for Change) process. Each RFC must include a technical impact assessment, rollback plan, test plan, and business sign-off prior to CAB submission. The Change Advisory Board reviews and approves all standard changes at the weekly meeting. Changes are deployed within the approved maintenance window and a post-implementation review is completed within 3 business days.",
+        "frequency": "Weekly CAB review",
+        "owner": "Change Management"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain the standard change register and select a sample of approved RFCs from the audit period.",
+        "Verify that each RFC includes a complete technical impact assessment, rollback plan, and test plan prior to CAB submission.",
+        "Confirm CAB approval is documented in meeting minutes for each sampled change and that the change was implemented within the approved maintenance window.",
+        "Review Linux system logs and SQL Server change audit logs to confirm that implemented changes match the approved RFC scope.",
+        "Verify that a post-implementation review was completed and signed off within 3 business days of the change deployment.",
+        "Check for any changes implemented outside the approved maintenance window and confirm they received documented additional authorisation."
+      ],
+      "evidenceRequired": [
+        "Standard change register with full RFC listings",
+        "CAB meeting minutes with approval evidence for each sampled change",
+        "Linux system change logs for the audit period",
+        "SQL Server DDL and DML change audit trail",
+        "Post-implementation review sign-off documents"
+      ]
+    },
+    "risk": {
+      "statement": "Poorly controlled standard changes can result in unplanned outages, data integrity issues, and missed rollback opportunities if changes deviate from approved scope.",
+      "category": "Operational"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["ISO 27001", "ITIL"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 6 }
+  },
+  {
+    "id": "WP006",
+    "system": { "os": "Windows", "database": "SQL Server", "applicationType": "Web App" },
+    "control": {
+      "type": "Password Policy",
+      "subType": "Complexity Enforcement",
+      "objective": "Ensure that password complexity requirements are enforced for all Windows Active Directory accounts and SQL Server logins to prevent brute-force and dictionary attacks.",
+      "controlDesign": {
+        "description": "Password complexity is enforced via Active Directory Group Policy Objects (GPO) and SQL Server login policies. Policy requires a minimum of 12 characters including uppercase, lowercase, numeric, and special characters. Complexity requirements apply to all user and service accounts. GPO settings and SQL Server login policies are reviewed and certified by IT Security annually.",
+        "frequency": "Continuous (system-enforced); annual review",
+        "owner": "IT Security"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain the Active Directory GPO settings for password complexity and compare against documented policy requirements (minimum 12 characters, complexity enabled, password history enforced).",
+        "Export SQL Server login policy settings and verify that CHECK_POLICY and CHECK_EXPIRATION are enabled for all user accounts.",
+        "Attempt to create a test account with a non-compliant password (e.g., all lowercase, 6 characters) to confirm the system enforces complexity requirements.",
+        "Review the most recent annual GPO certification report and confirm it was signed off by IT Security within the required timeframe.",
+        "Check for any service accounts with password complexity exceptions and confirm they have compensating controls such as restricted IP access or frequent rotation schedules."
+      ],
+      "evidenceRequired": [
+        "Active Directory GPO export showing password complexity and history settings",
+        "SQL Server login policy settings report (CHECK_POLICY, CHECK_EXPIRATION status)",
+        "Evidence of failed test account creation confirming complexity enforcement",
+        "Annual GPO certification sign-off by IT Security"
+      ]
+    },
+    "risk": {
+      "statement": "Weak or unenforced password complexity requirements increase susceptibility to brute-force attacks and credential compromise across Windows and SQL Server environments.",
+      "category": "Security"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "PCI-DSS", "ISO 27001"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 8 }
+  },
+  {
+    "id": "WP007",
+    "system": { "os": "Linux", "database": "Oracle", "applicationType": "Core Banking" },
+    "control": {
+      "type": "Password Policy",
+      "subType": "Expiry Control",
+      "objective": "Ensure that passwords for Linux system accounts and Oracle database user accounts expire and are renewed within defined policy intervals to reduce the risk of compromised credential reuse.",
+      "controlDesign": {
+        "description": "Linux system passwords are managed via PAM (Pluggable Authentication Modules) with a maximum password age of 90 days configured in /etc/login.defs. Oracle database passwords are governed by Oracle profiles with PASSWORD_LIFE_TIME set to 90 days. Warning notifications are sent 14 days before expiry. Accounts exceeding the expiry threshold are automatically locked by the system.",
+        "frequency": "Continuous (system-enforced)",
+        "owner": "IT Security"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Review /etc/login.defs and PAM configuration files on Linux servers to confirm PASS_MAX_DAYS is set to 90 and warning notifications are configured at 14 days.",
+        "Query Oracle DBA_PROFILES to verify that PASSWORD_LIFE_TIME is set to 90 and PASSWORD_GRACE_TIME is appropriately limited.",
+        "Extract a listing of Oracle user accounts and Linux accounts with password age exceeding 90 days and confirm whether they are locked or have documented exception approvals.",
+        "Verify that automated expiry warning notifications are generated at 14 days before expiry by reviewing notification logs or system-generated test evidence.",
+        "Check for any accounts with PASSWORD_LIFE_TIME set to UNLIMITED and confirm they have compensating controls or formal exception approvals with IT Security sign-off."
+      ],
+      "evidenceRequired": [
+        "Linux /etc/login.defs and PAM configuration file extracts",
+        "Oracle DBA_PROFILES query output showing PASSWORD_LIFE_TIME and PASSWORD_GRACE_TIME",
+        "Account listing identifying accounts with expired or near-expiry passwords",
+        "Password expiry notification log samples confirming 14-day warning"
+      ]
+    },
+    "risk": {
+      "statement": "Without mandatory password expiry, compromised credentials may remain valid indefinitely, enabling persistent unauthorised access to core banking systems.",
+      "category": "Security"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "PCI-DSS"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 4 }
+  },
+  {
+    "id": "WP008",
+    "system": { "os": "Windows", "database": "SQL Server", "applicationType": "Finance App" },
+    "control": {
+      "type": "Segregation of Duties",
+      "subType": "Finance App",
+      "objective": "Ensure that no single user can initiate, approve, and post financial transactions in the Finance application, preventing fraud and error through SoD enforcement.",
+      "controlDesign": {
+        "description": "The Finance application enforces SoD by separating the Initiator, Approver, and Posting roles at the application layer. SQL Server row-level security restricts data access aligned to role assignments. The SoD conflict matrix is reviewed quarterly by the Finance Controller and IT Security, and any identified conflicts are subject to documented compensating controls.",
+        "frequency": "Quarterly review",
+        "owner": "Finance Controller"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain the current SoD conflict matrix and Finance application role entitlement report for the audit period.",
+        "Run the SoD conflict detection report within the application and identify all users holding conflicting role combinations (e.g., Initiator combined with Approver).",
+        "For each identified conflict, confirm that a compensating control is documented and operating effectively, such as an independent supervisory transaction review.",
+        "Review SQL Server role membership and confirm that the Posting role is restricted from users who hold the Initiator or Approver roles.",
+        "Test a sample of transactions to confirm the application prevents a single user from completing the full initiate, approve, and post cycle without a second user.",
+        "Review the most recent quarterly SoD certification and confirm sign-off by the Finance Controller and IT Security within the required timeframe."
+      ],
+      "evidenceRequired": [
+        "SoD conflict matrix (current approved version)",
+        "Finance application role entitlement report for the audit period",
+        "SoD conflict detection report output",
+        "Compensating control documentation for each identified conflict",
+        "Quarterly SoD certification sign-off by Finance Controller and IT Security"
+      ]
+    },
+    "risk": {
+      "statement": "SoD violations in financial applications create conditions for undetected fraud, erroneous postings, and regulatory non-compliance under SOX Sections 302 and 404.",
+      "category": "Compliance"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 10 }
+  },
+  {
+    "id": "WP009",
+    "system": { "os": "Linux", "database": "Oracle", "applicationType": "ERP" },
+    "control": {
+      "type": "Segregation of Duties",
+      "subType": "ERP System",
+      "objective": "Ensure that ERP system roles on Linux and Oracle are designed and assigned to prevent SoD conflicts across procurement, accounts payable, and general ledger functions.",
+      "controlDesign": {
+        "description": "ERP roles are defined in the system role catalogue with SoD rules enforced at the Oracle application layer. The ERP Security team performs semi-annual SoD conflict analysis using an automated GRC tool. Identified conflicts are escalated to business process owners for remediation or exception approval with documented compensating controls.",
+        "frequency": "Semi-annual",
+        "owner": "ERP Security Team"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Obtain the ERP role catalogue and Oracle user-role assignment report for the full audit period.",
+        "Execute the GRC tool SoD conflict report and identify users with conflicts across procurement, accounts payable, and general ledger functions.",
+        "Verify that all conflicts identified in the prior semi-annual review have been remediated or have approved exception documentation with compensating controls.",
+        "Select a sample of users with sensitive role combinations and confirm that compensating controls such as transaction monitoring or supervisory review are active and documented.",
+        "Review Oracle audit logs for sampled conflicted users to identify any transactions executed using conflicting access during the audit period."
+      ],
+      "evidenceRequired": [
+        "ERP role catalogue (current approved version)",
+        "Oracle user-role assignment report for the audit period",
+        "GRC SoD conflict analysis report with conflict details",
+        "Exception approval documentation with compensating control descriptions",
+        "Oracle audit log extract for sampled users with conflicting access"
+      ]
+    },
+    "risk": {
+      "statement": "SoD conflicts in ERP systems can enable procurement fraud, duplicate payments, fictitious vendor creation, and circumvention of internal approval workflows.",
+      "category": "Compliance"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "ISO 27001"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 3 }
+  },
+  {
+    "id": "WP010",
+    "system": { "os": "Windows", "database": "SQL Server", "applicationType": "SIEM" },
+    "control": {
+      "type": "Logging and Monitoring",
+      "subType": "Audit Log Review",
+      "objective": "Ensure that audit logs from Windows servers and SQL Server are generated, retained, and reviewed regularly to detect security events, anomalous access, and policy violations.",
+      "controlDesign": {
+        "description": "Windows Security Event logs and SQL Server audit logs are forwarded to the SIEM platform in real time via log shipping agents. The Security Operations Centre reviews SIEM alerts daily and produces a weekly log review summary report. Log retention is configured for a minimum of 12 months in line with SOX requirements. Log integrity is protected by restricting administrative access to the logging infrastructure to the SOC lead only.",
+        "frequency": "Daily alerts; weekly summary review",
+        "owner": "Security Operations Centre"
+      }
+    },
+    "testArtifact": {
+      "testSteps": [
+        "Confirm that Windows Security Event logging is enabled and configured to capture logon events, privilege use, and object access by reviewing Group Policy settings and SIEM ingestion configuration.",
+        "Verify that SQL Server audit is enabled for all production database instances and that audit logs are being forwarded to the SIEM by reviewing SIEM ingestion confirmation logs.",
+        "Obtain a sample of weekly SOC log review summary reports and confirm they are completed, reviewed, and signed off within the required timeframe.",
+        "Review log retention settings in the SIEM platform and confirm that logs are retained for a minimum of 12 months with tamper-evident storage.",
+        "Inspect access controls on the SIEM administrative console to confirm that only authorised SOC personnel hold administrative rights and that changes to log forwarding configuration are themselves logged."
+      ],
+      "evidenceRequired": [
+        "Windows Security Event logging GPO settings export",
+        "SQL Server audit configuration settings and SIEM ingestion confirmation logs",
+        "Weekly SOC log review summary samples with reviewer sign-off",
+        "SIEM log retention configuration report confirming 12-month minimum",
+        "SIEM administrative access control listing"
+      ]
+    },
+    "risk": {
+      "statement": "Incomplete or unreviewed audit logs undermine the ability to detect and respond to security incidents, fraud, and compliance violations in a timely manner.",
+      "category": "Security"
+    },
+    "auditContext": { "industry": "BFSI", "framework": ["SOX", "ISO 27001", "PCI-DSS"], "year": 2024 },
+    "qualitySignals": { "reviewStatus": "Approved", "usageCount": 11 }
+  }
+]
