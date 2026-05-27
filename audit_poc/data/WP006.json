@@ -1,0 +1,34 @@
+{
+  "workpaperId": "WP006",
+  "control": {
+    "controlId": "AD-UAR-001",
+    "controlName": "Active Directory User Access Review",
+    "domain": "User Access Review",
+    "objective": "Ensure Active Directory access is periodically reviewed."
+  },
+  "testing": {
+    "testSteps": [
+      "Obtain AD access listing",
+      "Inspect quarterly review evidence",
+      "Verify terminated accounts removed"
+    ],
+    "testingPerformedNarrative": "Validated quarterly AD access review process."
+  },
+  "evidence": {
+    "actualEvidenceInspected": [
+      "AD user listing",
+      "Reviewer approval evidence"
+    ],
+    "expectedEvidence": [
+      "Quarterly sign-off",
+      "Termination evidence"
+    ]
+  },
+  "risk": {
+    "riskStatement": "Excessive AD access may lead to unauthorized system usage.",
+    "inherentRiskRating": "Medium"
+  },
+  "auditConclusion": {
+    "conclusionNarrative": "Control operated effectively with no major exceptions."
+  }
+}   

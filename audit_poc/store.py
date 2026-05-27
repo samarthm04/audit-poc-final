@@ -1,88 +1,142 @@
 import chromadb
-from sentence_transformers import SentenceTransformer
 import json
 import os
+import shutil
+from sentence_transformers import SentenceTransformer
 
-# Connect to ChromaDB
-client = chromadb.PersistentClient(path="./chroma_db")
+CHROMA_PATH = "./chroma_db"
+DATA_FILE = "./data/project_ready_workpaper_dataset.json"
 
-# Create/Get collection
+if os.path.exists(CHROMA_PATH):
+    shutil.rmtree(CHROMA_PATH)
+
+client = chromadb.PersistentClient(path=CHROMA_PATH)
+
 collection = client.get_or_create_collection(
     name="audit_collection"
 )
 
-# Embedding model
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# Folder containing JSON files
-DATA_FOLDER = "./data"
 
-# Read all JSON files
-for file in os.listdir(DATA_FOLDER):
+def safe_join(items):
+    if not items:
+        return ""
+    return " | ".join(str(x) for x in items)
 
-    if file.endswith(".json"):
 
-        filepath = os.path.join(DATA_FOLDER, file)
+with open(DATA_FILE, "r", encoding="utf-8") as file:
+    workpapers = json.load(file)
 
-        with open(filepath, "r") as f:
-            data = json.load(f)
+for wp in workpapers:
+    control = wp.get("control", {})
+    system = wp.get("systemContext", {})
+    audit = wp.get("auditMetadata", {})
+    design = wp.get("controlDesign", {})
+    testing = wp.get("testing", {})
+    evidence = wp.get("evidence", {})
+    risk = wp.get("risk", {})
+    gaps = wp.get("gapAnalysisFields", {})
+    retrieval = wp.get("retrieval", {})
+    conclusion = wp.get("auditConclusion", {})
 
-        # Convert JSON into AI-readable text
-        text = f"""
-        System Information:
-        OS: {data['system'].get('os', 'N/A')}
-        Database: {data['system'].get('database', 'N/A')}
-        Application Type: {data['system'].get('applicationType', 'N/A')}
+    text = f"""
+    Workpaper ID: {wp.get("workpaperId", "N/A")}
+    Source Document: {wp.get("sourceDocument", "N/A")}
+    Document Title: {wp.get("documentTitle", "N/A")}
 
-        Control Information:
-        Control Type: {data['control'].get('type', 'N/A')}
-        Sub Type: {data['control'].get('subType', 'N/A')}
-        Objective: {data['control'].get('objective', 'N/A')}
+    Control ID: {control.get("controlId", "N/A")}
+    Control Name: {control.get("controlName", "N/A")}
+    Domain: {control.get("domain", "N/A")}
+    Sub Domain: {control.get("subDomain", "N/A")}
+    Objective: {control.get("objective", "N/A")}
+    Frequency: {control.get("frequency", "N/A")}
+    Key Control: {control.get("keyControl", "N/A")}
 
-        Control Design:
-        Description: {data['controlDesign'].get('description', 'N/A')}
-        Frequency: {data['controlDesign'].get('frequency', 'N/A')}
-        Owner: {data['controlDesign'].get('owner', 'N/A')}
+    Primary System: {system.get("primarySystem", "N/A")}
+    Application Type: {system.get("applicationType", "N/A")}
+    Environment: {system.get("environment", "N/A")}
+    Supporting Systems: {safe_join(system.get("supportingSystems", []))}
 
-        Test Steps:
-        {' '.join(data['testArtifact'].get('testSteps', []))}
+    Frameworks: {safe_join(audit.get("frameworks", []))}
+    Audit Year: {audit.get("auditYear", "N/A")}
+    Audit Period: {audit.get("auditPeriod", "N/A")}
+    Source Type: {audit.get("sourceType", "N/A")}
 
-        Evidence Required:
-        {' '.join(data['testArtifact'].get('evidenceRequired', []))}
+    Control Design:
+    {design.get("designUnderstanding", "N/A")}
 
-        Evidence Tested:
-        {' '.join(data['evidenceTested'].get('testingPerformed', []))}
+    Design Attributes:
+    {safe_join(design.get("designAttributes", []))}
 
-        Result:
-        {data['evidenceTested'].get('result', 'N/A')}
+    Test Steps:
+    {safe_join(testing.get("testSteps", []))}
 
-        Risk:
-        Statement: {data['risk'].get('statement', 'N/A')}
-        Category: {data['risk'].get('category', 'N/A')}
+    Testing Performed:
+    {testing.get("testingPerformedNarrative", "N/A")}
 
-        Audit Context:
-        Industry: {data['auditContext'].get('industry', 'N/A')}
-        Framework: {' '.join(data['auditContext'].get('framework', []))}
-        Year: {data['auditContext'].get('year', 'N/A')}
+    Sampled Items:
+    {safe_join(testing.get("sampledItems", []))}
 
-        Quality Signals:
-        Review Status: {data['qualitySignals'].get('reviewStatus', 'N/A')}
-        Usage Count: {data['qualitySignals'].get('usageCount', 'N/A')}
-        """
+    Actual Evidence:
+    {safe_join(evidence.get("actualEvidenceInspected", []))}
 
-        # Generate embedding
-        embedding = model.encode(text).tolist()
+    Expected Evidence:
+    {safe_join(evidence.get("expectedEvidence", []))}
 
-        # Store in ChromaDB
-        collection.add(
-            documents=[text],
-            embeddings=[embedding],
-            ids=[data["id"]],
-            metadatas=[{
-                "control_type": data["control"].get("type", "N/A"),
-                "framework": str(data["auditContext"].get("framework", [])),
-                "year": data["auditContext"].get("year", "N/A")
-            }]
-        )
+    Risk Statement:
+    {risk.get("riskStatement", "N/A")}
 
-print("All workpapers stored successfully!")
+    Risk Category:
+    {risk.get("riskCategory", "N/A")}
+
+    Inherent Risk Rating:
+    {risk.get("inherentRiskRating", "N/A")}
+
+    Potential Missing Evidence:
+    {safe_join(gaps.get("potentialMissingEvidence", []))}
+
+    Control Gaps:
+    {safe_join(gaps.get("controlGaps", []))}
+
+    Recommended Remediation:
+    {safe_join(gaps.get("recommendedRemediation", []))}
+
+    Completeness Assessment:
+    {gaps.get("completenessAssessment", "N/A")}
+
+    Retrieval Tags:
+    {safe_join(retrieval.get("retrievalTags", []))}
+
+    Search Keywords:
+    {safe_join(retrieval.get("searchKeywords", []))}
+
+    Audit Conclusion:
+    {conclusion.get("conclusionNarrative", "N/A")}
+
+    Operating Effectively:
+    {conclusion.get("operatingEffectively", "N/A")}
+    """
+
+    embedding = model.encode(text).tolist()
+
+    collection.add(
+        documents=[text],
+        embeddings=[embedding],
+        ids=[wp.get("workpaperId")],
+        metadatas=[{
+            "workpaper_id": wp.get("workpaperId", "N/A"),
+            "control_id": control.get("controlId", "N/A"),
+            "control_name": control.get("controlName", "N/A"),
+            "domain": control.get("domain", "N/A"),
+            "sub_domain": control.get("subDomain", "N/A"),
+            "risk_rating": risk.get("inherentRiskRating", "N/A"),
+            "risk_category": risk.get("riskCategory", "N/A"),
+            "audit_year": audit.get("auditYear", "N/A"),
+            "frameworks": safe_join(audit.get("frameworks", [])),
+            "operating_effectively": str(conclusion.get("operatingEffectively", "N/A")),
+            "source_document": wp.get("sourceDocument", "N/A")
+        }]
+    )
+
+print(f"Stored {len(workpapers)} workpapers successfully.")

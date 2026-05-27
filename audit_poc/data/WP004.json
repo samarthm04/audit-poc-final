@@ -1,0 +1,37 @@
+{
+  "workpaperId": "WP004",
+  "control": {
+    "controlId": "CHG-CRB-001",
+    "controlName": "CRB Approval Before Production Deployment",
+    "domain": "Change Management",
+    "objective": "Ensure production changes are reviewed and approved before deployment"
+  },
+  "testing": {
+    "testSteps": [
+      "Obtain production change population",
+      "Select sample change tickets",
+      "Verify CRB approval prior to deployment",
+      "Inspect rollback documentation"
+    ],
+    "testingPerformedNarrative": "Reviewed selected production change tickets and validated evidence of CRB approval prior to migration."
+  },
+  "evidence": {
+    "actualEvidenceInspected": [
+      "ServiceNow change tickets",
+      "Approval screenshots",
+      "Deployment logs"
+    ],
+    "expectedEvidence": [
+      "CRB approval",
+      "Rollback plan",
+      "Deployment timestamps"
+    ]
+  },
+  "risk": {
+    "riskStatement": "Unauthorized changes may impact production stability.",
+    "inherentRiskRating": "High"
+  },
+  "auditConclusion": {
+    "conclusionNarrative": "Control operated effectively for the samples tested."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "workpaperId": "WP005",
+  "control": {
+    "controlId": "SQL-UAR-001",
+    "controlName": "SQL User Access Review",
+    "domain": "User Access Review",
+    "objective": "Ensure SQL access is reviewed periodically."
+  },
+  "testing": {
+    "testSteps": [
+      "Obtain SQL user listing",
+      "Inspect reviewer sign-off",
+      "Verify terminated users removed"
+    ],
+    "testingPerformedNarrative": "Validated SQL user review evidence for selected quarters."
+  },
+  "evidence": {
+    "actualEvidenceInspected": [
+      "SQL user access listing",
+      "Manager approval emails"
+    ],
+    "expectedEvidence": [
+      "Quarterly review sign-off",
+      "Access removal evidence"
+    ]
+  },
+  "risk": {
+    "riskStatement": "Unauthorized SQL access may lead to data compromise.",
+    "inherentRiskRating": "Medium"
+  },
+  "auditConclusion": {
+    "conclusionNarrative": "Minor exceptions noted for delayed access removal."
+  }
+}

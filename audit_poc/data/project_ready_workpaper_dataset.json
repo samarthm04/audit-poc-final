@@ -1,0 +1,3543 @@
+[
+  {
+    "workpaperId": "WP-001",
+    "sourceDocument": "AD_Access_Revocation_Variation_1.docx",
+    "documentTitle": "AD Access Revocation - Variation 1",
+    "control": {
+      "controlId": "IAM-AD-REV-001",
+      "controlName": "Active Directory Access Revocation",
+      "domain": "Identity and Access Management",
+      "subDomain": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft Active Directory",
+      "applicationType": "Directory Services",
+      "environment": "Corporate Network",
+      "supportingSystems": [
+        "HRMS",
+        "ServiceNow ITSM",
+        "Privileged Access Management Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "testingPerformedNarrative": "For sampled change request CHG-2026-1045, CRB approval was completed on April 12, 2026 at 2:15 PM while production deployment occurred on April 13, 2026 at 10:00 PM. Evidence reviewed included ServiceNow approval screenshots and deployment logs.",
+      "sampledItems": [
+        "CHG-2026-1045"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ServiceNow change tickets",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB approval screenshots",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Deployment logs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Implementation records",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "potentialMissingEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "AD revocation",
+        "terminated users",
+        "access removal",
+        "HRMS",
+        "Active Directory",
+        "JML",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "AD revocation",
+        "Active Directory",
+        "Active Directory Access Revocation",
+        "CHG-2026-1045",
+        "HRMS",
+        "ITGC",
+        "Identity and Access Management",
+        "JML",
+        "access removal",
+        "terminated users"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on the procedures performed, the control appears to be suitably designed and operating effectively during the audit period.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-002",
+    "sourceDocument": "AD_Access_Revocation_Variation_2.docx",
+    "documentTitle": "AD Access Revocation - Variation 2",
+    "control": {
+      "controlId": "IAM-AD-REV-001",
+      "controlName": "Active Directory Access Revocation",
+      "domain": "Identity and Access Management",
+      "subDomain": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft Active Directory",
+      "applicationType": "Directory Services",
+      "environment": "Corporate Network",
+      "supportingSystems": [
+        "HRMS",
+        "ServiceNow ITSM",
+        "Privileged Access Management Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "testingPerformedNarrative": "Sample ticket CHG-2026-2088 related to a firewall configuration update was inspected. The audit team verified that CRB approval and security sign-off were completed prior to implementation into production.",
+      "sampledItems": [
+        "CHG-2026-2088"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ITSM workflow approvals",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB meeting minutes",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production deployment evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Testing documentation",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "potentialMissingEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "AD revocation",
+        "terminated users",
+        "access removal",
+        "HRMS",
+        "Active Directory",
+        "JML",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "AD revocation",
+        "Active Directory",
+        "Active Directory Access Revocation",
+        "CHG-2026-2088",
+        "HRMS",
+        "ITGC",
+        "Identity and Access Management",
+        "JML",
+        "access removal",
+        "terminated users"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "No exceptions were identified during testing and the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-003",
+    "sourceDocument": "AD_Access_Revocation_Variation_3.docx",
+    "documentTitle": "AD Access Revocation - Variation 3",
+    "control": {
+      "controlId": "IAM-AD-REV-001",
+      "controlName": "Active Directory Access Revocation",
+      "domain": "Identity and Access Management",
+      "subDomain": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft Active Directory",
+      "applicationType": "Directory Services",
+      "environment": "Corporate Network",
+      "supportingSystems": [
+        "HRMS",
+        "ServiceNow ITSM",
+        "Privileged Access Management Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "testingPerformedNarrative": "For selected deployment CRQ-2026-3150, approval evidence from the CRB meeting minutes was reviewed. The implementation timestamp within the deployment tool confirmed the change was migrated after approval completion.",
+      "sampledItems": [
+        "CRQ-2026-3150"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change management reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Approval email chains",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Release schedules",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Migration logs",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "potentialMissingEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log"
+      ],
+      "controlGaps": [
+        "Control conclusion does not clearly indicate operating effectiveness"
+      ],
+      "recommendedRemediation": [
+        "Obtain missing evidence and retest impacted sample items"
+      ],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "AD revocation",
+        "terminated users",
+        "access removal",
+        "HRMS",
+        "Active Directory",
+        "JML",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "AD revocation",
+        "Active Directory",
+        "Active Directory Access Revocation",
+        "CRQ-2026-3150",
+        "HRMS",
+        "ITGC",
+        "Identity and Access Management",
+        "JML",
+        "access removal",
+        "terminated users"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "The CRB review and approval process was consistently followed for the samples tested.",
+      "operatingEffectively": false,
+      "exceptionsIdentified": null,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-004",
+    "sourceDocument": "AD_Access_Revocation_Variation_4.docx",
+    "documentTitle": "AD Access Revocation - Variation 4",
+    "control": {
+      "controlId": "IAM-AD-REV-001",
+      "controlName": "Active Directory Access Revocation",
+      "domain": "Identity and Access Management",
+      "subDomain": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft Active Directory",
+      "applicationType": "Directory Services",
+      "environment": "Corporate Network",
+      "supportingSystems": [
+        "HRMS",
+        "ServiceNow ITSM",
+        "Privileged Access Management Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "testingPerformedNarrative": "The audit team reviewed sample production change CHG-2026-4412 and verified that testing evidence, rollback procedures, and CRB approval were documented before the deployment window commenced.",
+      "sampledItems": [
+        "CHG-2026-4412"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change request forms",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "System-generated approval history",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production release evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Rollback plans",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "potentialMissingEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "AD revocation",
+        "terminated users",
+        "access removal",
+        "HRMS",
+        "Active Directory",
+        "JML",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "AD revocation",
+        "Active Directory",
+        "Active Directory Access Revocation",
+        "CHG-2026-4412",
+        "HRMS",
+        "ITGC",
+        "Identity and Access Management",
+        "JML",
+        "access removal",
+        "terminated users"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on evidence inspected and testing performed, the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-005",
+    "sourceDocument": "AD_access_revocation_workpaper.docx",
+    "documentTitle": "AD Access Revocation Workpaper",
+    "control": {
+      "controlId": "IAM-AD-REV-001",
+      "controlName": "Active Directory Access Revocation",
+      "domain": "Identity and Access Management",
+      "subDomain": "Joiner Mover Leaver",
+      "objective": "To ensure terminated or transferred employees have their Active Directory (AD) access revoked in a timely manner to prevent unauthorized access to organizational systems and data.",
+      "frequency": "Event Based",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft Active Directory",
+      "applicationType": "Directory Services",
+      "environment": "Corporate Network",
+      "supportingSystems": [
+        "HRMS",
+        "ServiceNow ITSM",
+        "Privileged Access Management Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Based on discussions with the IT Infrastructure Manager, the organization uses Active Directory to centrally manage user accounts and authentication. HR communicates employee termination or transfer details to the IT support team through the HRMS system. Upon receiving notification, the IT administrator disables the user account within Active Directory and removes associated privileged access where applicable.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained the list of terminated employees during the audit period.",
+        "Selected a sample of users for testing.",
+        "Verified HR termination dates against AD account disablement dates.",
+        "Inspected screenshots and logs evidencing account disablement.",
+        "Verified whether privileged access was also revoked."
+      ],
+      "testingPerformedNarrative": "For sampled user ID EMP1045, the HR termination date was March 10, 2026, and the AD account was disabled on the same day. Screenshot evidence from Active Directory confirmed account disablement.",
+      "sampledItems": [
+        "EMP1045"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "HR termination reports",
+        "Active Directory screenshots",
+        "User access logs",
+        "ITSM tickets related to access revocation"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "HR termination reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Active Directory screenshots",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "User access logs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "ITSM tickets related to access revocation",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Terminated or transferred employees may retain access to systems and data if access is not revoked timely.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "HR termination reports",
+        "Active Directory screenshots",
+        "User access logs",
+        "ITSM tickets related to access revocation"
+      ],
+      "expectedEvidence": [
+        "HR termination report",
+        "AD disablement screenshot",
+        "User access log",
+        "ITSM revocation ticket",
+        "Privileged access removal evidence"
+      ],
+      "potentialMissingEvidence": [
+        "AD disablement screenshot",
+        "Privileged access removal evidence"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "AD revocation",
+        "terminated users",
+        "access removal",
+        "HRMS",
+        "Active Directory",
+        "JML",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "AD revocation",
+        "Active Directory",
+        "Active Directory Access Revocation",
+        "EMP1045",
+        "HRMS",
+        "ITGC",
+        "Identity and Access Management",
+        "JML",
+        "access removal",
+        "terminated users"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on testing performed, AD access revocation controls appear to be operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-006",
+    "sourceDocument": "SOC2_ARB_Control_Variation_1.docx",
+    "documentTitle": "SOC2 ARB Control - Variation 1",
+    "control": {
+      "controlId": "CHG-CRB-001",
+      "controlName": "CRB Approval Before Production Deployment",
+      "domain": "Change Management",
+      "subDomain": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "ServiceNow ITSM",
+      "applicationType": "Change Management",
+      "environment": "Production",
+      "supportingSystems": [
+        "Deployment Tool",
+        "Release Calendar",
+        "CRB Approval Workflow"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "testingPerformedNarrative": "For sampled change request CHG-2026-1045, CRB approval was completed on April 12, 2026 at 2:15 PM while production deployment occurred on April 13, 2026 at 10:00 PM. Evidence reviewed included ServiceNow approval screenshots and deployment logs.",
+      "sampledItems": [
+        "CHG-2026-1045"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ServiceNow change tickets",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB approval screenshots",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Deployment logs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Implementation records",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "riskCategory": "Operational and Security",
+      "inherentRiskRating": "High",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "potentialMissingEvidence": [
+        "Testing evidence",
+        "Rollback plan"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "CRB approval",
+        "production deployment",
+        "change management",
+        "ServiceNow",
+        "rollback plan",
+        "UAT",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-1045",
+        "CRB Approval Before Production Deployment",
+        "CRB approval",
+        "Change Management",
+        "ITGC",
+        "ServiceNow",
+        "UAT",
+        "change management",
+        "production deployment",
+        "rollback plan"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on the procedures performed, the control appears to be suitably designed and operating effectively during the audit period.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-007",
+    "sourceDocument": "SOC2_ARB_Control_Variation_2.docx",
+    "documentTitle": "SOC2 ARB Control - Variation 2",
+    "control": {
+      "controlId": "CHG-CRB-001",
+      "controlName": "CRB Approval Before Production Deployment",
+      "domain": "Change Management",
+      "subDomain": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "ServiceNow ITSM",
+      "applicationType": "Change Management",
+      "environment": "Production",
+      "supportingSystems": [
+        "Deployment Tool",
+        "Release Calendar",
+        "CRB Approval Workflow"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "testingPerformedNarrative": "Sample ticket CHG-2026-2088 related to a firewall configuration update was inspected. The audit team verified that CRB approval and security sign-off were completed prior to implementation into production.",
+      "sampledItems": [
+        "CHG-2026-2088"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ITSM workflow approvals",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB meeting minutes",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production deployment evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Testing documentation",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "riskCategory": "Operational and Security",
+      "inherentRiskRating": "High",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "potentialMissingEvidence": [
+        "Change request ticket",
+        "Rollback plan"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "CRB approval",
+        "production deployment",
+        "change management",
+        "ServiceNow",
+        "rollback plan",
+        "UAT",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-2088",
+        "CRB Approval Before Production Deployment",
+        "CRB approval",
+        "Change Management",
+        "ITGC",
+        "ServiceNow",
+        "UAT",
+        "change management",
+        "production deployment",
+        "rollback plan"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "No exceptions were identified during testing and the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-008",
+    "sourceDocument": "SOC2_ARB_Control_Variation_3.docx",
+    "documentTitle": "SOC2 ARB Control - Variation 3",
+    "control": {
+      "controlId": "CHG-CRB-001",
+      "controlName": "CRB Approval Before Production Deployment",
+      "domain": "Change Management",
+      "subDomain": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "ServiceNow ITSM",
+      "applicationType": "Change Management",
+      "environment": "Production",
+      "supportingSystems": [
+        "Deployment Tool",
+        "Release Calendar",
+        "CRB Approval Workflow"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "testingPerformedNarrative": "For selected deployment CRQ-2026-3150, approval evidence from the CRB meeting minutes was reviewed. The implementation timestamp within the deployment tool confirmed the change was migrated after approval completion.",
+      "sampledItems": [
+        "CRQ-2026-3150"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change management reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Approval email chains",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Release schedules",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Migration logs",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "riskCategory": "Operational and Security",
+      "inherentRiskRating": "High",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "potentialMissingEvidence": [
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp"
+      ],
+      "controlGaps": [
+        "Control conclusion does not clearly indicate operating effectiveness"
+      ],
+      "recommendedRemediation": [
+        "Obtain missing evidence and retest impacted sample items"
+      ],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "CRB approval",
+        "production deployment",
+        "change management",
+        "ServiceNow",
+        "rollback plan",
+        "UAT",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CRB Approval Before Production Deployment",
+        "CRB approval",
+        "CRQ-2026-3150",
+        "Change Management",
+        "ITGC",
+        "ServiceNow",
+        "UAT",
+        "change management",
+        "production deployment",
+        "rollback plan"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "The CRB review and approval process was consistently followed for the samples tested.",
+      "operatingEffectively": false,
+      "exceptionsIdentified": null,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-009",
+    "sourceDocument": "SOC2_ARB_Control_Variation_4.docx",
+    "documentTitle": "SOC2 ARB Control - Variation 4",
+    "control": {
+      "controlId": "CHG-CRB-001",
+      "controlName": "CRB Approval Before Production Deployment",
+      "domain": "Change Management",
+      "subDomain": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Change Review Board (CRB) prior to deployment into production.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "ServiceNow ITSM",
+      "applicationType": "Change Management",
+      "environment": "Production",
+      "supportingSystems": [
+        "Deployment Tool",
+        "Release Calendar",
+        "CRB Approval Workflow"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "testingPerformedNarrative": "The audit team reviewed sample production change CHG-2026-4412 and verified that testing evidence, rollback procedures, and CRB approval were documented before the deployment window commenced.",
+      "sampledItems": [
+        "CHG-2026-4412"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change request forms",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "System-generated approval history",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production release evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Rollback plans",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "riskCategory": "Operational and Security",
+      "inherentRiskRating": "High",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "potentialMissingEvidence": [
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "CRB approval",
+        "production deployment",
+        "change management",
+        "ServiceNow",
+        "rollback plan",
+        "UAT",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-4412",
+        "CRB Approval Before Production Deployment",
+        "CRB approval",
+        "Change Management",
+        "ITGC",
+        "ServiceNow",
+        "UAT",
+        "change management",
+        "production deployment",
+        "rollback plan"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on evidence inspected and testing performed, the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-010",
+    "sourceDocument": "SOC2_ARB_control_workpaper.docx",
+    "documentTitle": "SOC2 ARB Control Workpaper",
+    "control": {
+      "controlId": "CHG-CRB-001",
+      "controlName": "CRB Approval Before Production Deployment",
+      "domain": "Change Management",
+      "subDomain": "Production Change Governance",
+      "objective": "To ensure architecture and major technology changes are reviewed and approved by the Architecture Review Board (ARB) prior to implementation.",
+      "frequency": "Periodic",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "ServiceNow ITSM",
+      "applicationType": "Change Management",
+      "environment": "Production",
+      "supportingSystems": [
+        "Deployment Tool",
+        "Release Calendar",
+        "CRB Approval Workflow"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Change Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Management explained that all significant infrastructure and application architecture changes are routed through the Architecture Review Board. The ARB evaluates security, scalability, compliance, and operational impact before approval.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained the list of architecture changes.",
+        "Selected sample changes.",
+        "Verified ARB approvals prior to implementation.",
+        "Inspected ARB meeting minutes and approval evidence.",
+        "Verified implementation timelines against approval timestamps."
+      ],
+      "testingPerformedNarrative": "Sample architecture change ARB-2026-018 was reviewed. The ARB approval was documented prior to production implementation and included security and infrastructure sign-offs.",
+      "sampledItems": [
+        "ARB-2026-018"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ARB meeting minutes",
+        "Architecture diagrams",
+        "Approval workflows",
+        "Change implementation records"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ARB meeting minutes",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Architecture diagrams",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Approval workflows",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Change implementation records",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Unauthorized, unapproved, or inadequately tested changes may be deployed into production, resulting in service disruption, security exposure, or non-compliance.",
+      "riskCategory": "Operational and Security",
+      "inherentRiskRating": "High",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ARB meeting minutes",
+        "Architecture diagrams",
+        "Approval workflows",
+        "Change implementation records"
+      ],
+      "expectedEvidence": [
+        "Change request ticket",
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp",
+        "Rollback plan"
+      ],
+      "potentialMissingEvidence": [
+        "CRB approval record",
+        "Testing evidence",
+        "Deployment timestamp"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "CRB approval",
+        "production deployment",
+        "change management",
+        "ServiceNow",
+        "rollback plan",
+        "UAT",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "ARB-2026-018",
+        "CRB Approval Before Production Deployment",
+        "CRB approval",
+        "Change Management",
+        "ITGC",
+        "ServiceNow",
+        "UAT",
+        "change management",
+        "production deployment",
+        "rollback plan"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "The ARB control appears suitably designed and operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-011",
+    "sourceDocument": "SQL_User_Access_Review_Variation_1.docx",
+    "documentTitle": "SQL User Access Review - Variation 1",
+    "control": {
+      "controlId": "IAM-SQL-UAR-001",
+      "controlName": "SQL Database User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft SQL Server",
+      "applicationType": "Database Management",
+      "environment": "Production Database",
+      "supportingSystems": [
+        "SQL Management Console",
+        "Access Review Report",
+        "Ticketing Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "testingPerformedNarrative": "For sampled change request CHG-2026-1045, CRB approval was completed on April 12, 2026 at 2:15 PM while production deployment occurred on April 13, 2026 at 10:00 PM. Evidence reviewed included ServiceNow approval screenshots and deployment logs.",
+      "sampledItems": [
+        "CHG-2026-1045"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ServiceNow change tickets",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB approval screenshots",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Deployment logs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Implementation records",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "potentialMissingEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "SQL access review",
+        "database access",
+        "quarterly review",
+        "DBA",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-1045",
+        "DBA",
+        "ITGC",
+        "Identity and Access Management",
+        "SQL Database User Access Review",
+        "SQL access review",
+        "access remediation",
+        "database access",
+        "quarterly review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on the procedures performed, the control appears to be suitably designed and operating effectively during the audit period.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-012",
+    "sourceDocument": "SQL_User_Access_Review_Variation_2.docx",
+    "documentTitle": "SQL User Access Review - Variation 2",
+    "control": {
+      "controlId": "IAM-SQL-UAR-001",
+      "controlName": "SQL Database User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft SQL Server",
+      "applicationType": "Database Management",
+      "environment": "Production Database",
+      "supportingSystems": [
+        "SQL Management Console",
+        "Access Review Report",
+        "Ticketing Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "testingPerformedNarrative": "Sample ticket CHG-2026-2088 related to a firewall configuration update was inspected. The audit team verified that CRB approval and security sign-off were completed prior to implementation into production.",
+      "sampledItems": [
+        "CHG-2026-2088"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ITSM workflow approvals",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB meeting minutes",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production deployment evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Testing documentation",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "potentialMissingEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "SQL access review",
+        "database access",
+        "quarterly review",
+        "DBA",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-2088",
+        "DBA",
+        "ITGC",
+        "Identity and Access Management",
+        "SQL Database User Access Review",
+        "SQL access review",
+        "access remediation",
+        "database access",
+        "quarterly review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "No exceptions were identified during testing and the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-013",
+    "sourceDocument": "SQL_User_Access_Review_Variation_3.docx",
+    "documentTitle": "SQL User Access Review - Variation 3",
+    "control": {
+      "controlId": "IAM-SQL-UAR-001",
+      "controlName": "SQL Database User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft SQL Server",
+      "applicationType": "Database Management",
+      "environment": "Production Database",
+      "supportingSystems": [
+        "SQL Management Console",
+        "Access Review Report",
+        "Ticketing Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "testingPerformedNarrative": "For selected deployment CRQ-2026-3150, approval evidence from the CRB meeting minutes was reviewed. The implementation timestamp within the deployment tool confirmed the change was migrated after approval completion.",
+      "sampledItems": [
+        "CRQ-2026-3150"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change management reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Approval email chains",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Release schedules",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Migration logs",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "potentialMissingEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket"
+      ],
+      "controlGaps": [
+        "Control conclusion does not clearly indicate operating effectiveness"
+      ],
+      "recommendedRemediation": [
+        "Obtain missing evidence and retest impacted sample items"
+      ],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "SQL access review",
+        "database access",
+        "quarterly review",
+        "DBA",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CRQ-2026-3150",
+        "DBA",
+        "ITGC",
+        "Identity and Access Management",
+        "SQL Database User Access Review",
+        "SQL access review",
+        "access remediation",
+        "database access",
+        "quarterly review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "The CRB review and approval process was consistently followed for the samples tested.",
+      "operatingEffectively": false,
+      "exceptionsIdentified": null,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-014",
+    "sourceDocument": "SQL_User_Access_Review_Variation_4.docx",
+    "documentTitle": "SQL User Access Review - Variation 4",
+    "control": {
+      "controlId": "IAM-SQL-UAR-001",
+      "controlName": "SQL Database User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft SQL Server",
+      "applicationType": "Database Management",
+      "environment": "Production Database",
+      "supportingSystems": [
+        "SQL Management Console",
+        "Access Review Report",
+        "Ticketing Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "testingPerformedNarrative": "The audit team reviewed sample production change CHG-2026-4412 and verified that testing evidence, rollback procedures, and CRB approval were documented before the deployment window commenced.",
+      "sampledItems": [
+        "CHG-2026-4412"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change request forms",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "System-generated approval history",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production release evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Rollback plans",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "potentialMissingEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "SQL access review",
+        "database access",
+        "quarterly review",
+        "DBA",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-4412",
+        "DBA",
+        "ITGC",
+        "Identity and Access Management",
+        "SQL Database User Access Review",
+        "SQL access review",
+        "access remediation",
+        "database access",
+        "quarterly review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on evidence inspected and testing performed, the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-015",
+    "sourceDocument": "SQL_user_access_review_workpaper.docx",
+    "documentTitle": "User Access Review SQL Updated Workpaper",
+    "control": {
+      "controlId": "IAM-SQL-UAR-001",
+      "controlName": "SQL Database User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft SQL Server",
+      "applicationType": "Database Management",
+      "environment": "Production Database",
+      "supportingSystems": [
+        "SQL Management Console",
+        "Access Review Report",
+        "Ticketing Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "The Database Administration team performs quarterly reviews of SQL user access listings. Access reports are generated from the database management console and reviewed by database owners.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained SQL user access review reports.",
+        "Verified evidence of quarterly review.",
+        "Checked reviewer approvals.",
+        "Verified remediation actions for terminated or excessive access."
+      ],
+      "testingPerformedNarrative": "For Q1 2026 review, the DBA team identified two inactive accounts and initiated removal requests. Evidence of removal was verified through SQL management console screenshots.",
+      "sampledItems": [],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "SQL access review reports",
+        "Reviewer sign-offs",
+        "Access removal tickets",
+        "Database user listings"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "SQL access review reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Reviewer sign-offs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Access removal tickets",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Database user listings",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "SQL access review reports",
+        "Reviewer sign-offs",
+        "Access removal tickets",
+        "Database user listings"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "potentialMissingEvidence": [
+        "Management approval"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "SQL access review",
+        "database access",
+        "quarterly review",
+        "DBA",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "DBA",
+        "ITGC",
+        "Identity and Access Management",
+        "SQL Database User Access Review",
+        "SQL access review",
+        "access remediation",
+        "database access",
+        "quarterly review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Quarterly SQL user access reviews were performed effectively during the audit period.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-016",
+    "sourceDocument": "user_access_review_SQL_updated.docx",
+    "documentTitle": "User Access Review SQL Updated Workpaper",
+    "control": {
+      "controlId": "IAM-SQL-UAR-001",
+      "controlName": "SQL Database User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Database Access Review",
+      "objective": "To ensure periodic SQL database user access reviews are performed and inappropriate access is identified and removed.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "Microsoft SQL Server",
+      "applicationType": "Database Management",
+      "environment": "Production Database",
+      "supportingSystems": [
+        "SQL Management Console",
+        "Access Review Report",
+        "Ticketing Tool"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "The Database Administration team performs quarterly reviews of SQL user access listings. Access reports are generated from the database management console and reviewed by database owners.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained SQL user access review reports.",
+        "Verified evidence of quarterly review.",
+        "Checked reviewer approvals.",
+        "Verified remediation actions for terminated or excessive access."
+      ],
+      "testingPerformedNarrative": "For Q1 2026 review, the DBA team identified two inactive accounts and initiated removal requests. Evidence of removal was verified through SQL management console screenshots.",
+      "sampledItems": [],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "SQL access review reports",
+        "Reviewer sign-offs",
+        "Access removal tickets",
+        "Database user listings"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "SQL access review reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Reviewer sign-offs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Access removal tickets",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Database user listings",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Inappropriate or excessive database access may remain active and allow unauthorized access to sensitive data.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "SQL access review reports",
+        "Reviewer sign-offs",
+        "Access removal tickets",
+        "Database user listings"
+      ],
+      "expectedEvidence": [
+        "SQL user access listing",
+        "Reviewer sign-off",
+        "Access removal ticket",
+        "Database user listing",
+        "Management approval"
+      ],
+      "potentialMissingEvidence": [
+        "Management approval"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "SQL access review",
+        "database access",
+        "quarterly review",
+        "DBA",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "DBA",
+        "ITGC",
+        "Identity and Access Management",
+        "SQL Database User Access Review",
+        "SQL access review",
+        "access remediation",
+        "database access",
+        "quarterly review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Quarterly SQL user access reviews were performed effectively during the audit period.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-017",
+    "sourceDocument": "User_Access_Review_Variation_1.docx",
+    "documentTitle": "User Access Review - Variation 1",
+    "control": {
+      "controlId": "IAM-UAR-001",
+      "controlName": "Periodic User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "IAM Platform",
+      "applicationType": "Access Governance",
+      "environment": "Production Applications",
+      "supportingSystems": [
+        "IAM Certification Workflow",
+        "Ticketing Tool",
+        "Application Role Listing"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Based on discussions held with the IT Operations Manager, all requests impacting production systems are initiated through the ITSM tool and routed for CRB approval prior to implementation. The CRB reviews the business impact, rollback procedures, testing evidence, and security considerations before approving deployment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained the population of production change requests during the audit period.",
+        "Selected a sample of changes for detailed testing.",
+        "Verified whether CRB approval was documented prior to deployment.",
+        "Reviewed implementation timestamps against approval dates.",
+        "Inspected supporting evidence including change tickets and approval records."
+      ],
+      "testingPerformedNarrative": "For sampled change request CHG-2026-1045, CRB approval was completed on April 12, 2026 at 2:15 PM while production deployment occurred on April 13, 2026 at 10:00 PM. Evidence reviewed included ServiceNow approval screenshots and deployment logs.",
+      "sampledItems": [
+        "CHG-2026-1045"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ServiceNow change tickets",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB approval screenshots",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Deployment logs",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Implementation records",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ServiceNow change tickets",
+        "CRB approval screenshots",
+        "Deployment logs",
+        "Implementation records"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "potentialMissingEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "user access review",
+        "manager certification",
+        "IAM",
+        "quarterly review",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-1045",
+        "IAM",
+        "ITGC",
+        "Identity and Access Management",
+        "Periodic User Access Review",
+        "access remediation",
+        "manager certification",
+        "quarterly review",
+        "user access review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on the procedures performed, the control appears to be suitably designed and operating effectively during the audit period.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-018",
+    "sourceDocument": "User_Access_Review_Variation_2.docx",
+    "documentTitle": "User Access Review - Variation 2",
+    "control": {
+      "controlId": "IAM-UAR-001",
+      "controlName": "Periodic User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "IAM Platform",
+      "applicationType": "Access Governance",
+      "environment": "Production Applications",
+      "supportingSystems": [
+        "IAM Certification Workflow",
+        "Ticketing Tool",
+        "Application Role Listing"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "During walkthrough meetings with the Infrastructure Lead, management explained that production changes cannot proceed without documented CRB approval within the ServiceNow workflow. The review includes validation of testing results, implementation plans, and segregation of duties.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Requested the quarterly change management register.",
+        "Selected sample production deployments.",
+        "Validated existence of CRB approval within the workflow.",
+        "Verified deployment dates occurred after approval completion.",
+        "Reviewed attached testing and rollback documentation."
+      ],
+      "testingPerformedNarrative": "Sample ticket CHG-2026-2088 related to a firewall configuration update was inspected. The audit team verified that CRB approval and security sign-off were completed prior to implementation into production.",
+      "sampledItems": [
+        "CHG-2026-2088"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "ITSM workflow approvals",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "CRB meeting minutes",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production deployment evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Testing documentation",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "ITSM workflow approvals",
+        "CRB meeting minutes",
+        "Production deployment evidence",
+        "Testing documentation"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "potentialMissingEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "user access review",
+        "manager certification",
+        "IAM",
+        "quarterly review",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-2088",
+        "IAM",
+        "ITGC",
+        "Identity and Access Management",
+        "Periodic User Access Review",
+        "access remediation",
+        "manager certification",
+        "quarterly review",
+        "user access review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "No exceptions were identified during testing and the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-019",
+    "sourceDocument": "User_Access_Review_Variation_3.docx",
+    "documentTitle": "User Access Review - Variation 3",
+    "control": {
+      "controlId": "IAM-UAR-001",
+      "controlName": "Periodic User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "IAM Platform",
+      "applicationType": "Access Governance",
+      "environment": "Production Applications",
+      "supportingSystems": [
+        "IAM Certification Workflow",
+        "Ticketing Tool",
+        "Application Role Listing"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "As explained by the Change Manager during the audit walkthrough, change requests are presented to the CRB during weekly meetings where technical, operational, and security impacts are evaluated before approval is granted.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained change tickets migrated into production.",
+        "Selected representative samples across different applications.",
+        "Inspected CRB approval logs and meeting records.",
+        "Compared approval timestamps with production release timestamps.",
+        "Verified evidence of management review and technical validation."
+      ],
+      "testingPerformedNarrative": "For selected deployment CRQ-2026-3150, approval evidence from the CRB meeting minutes was reviewed. The implementation timestamp within the deployment tool confirmed the change was migrated after approval completion.",
+      "sampledItems": [
+        "CRQ-2026-3150"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change management reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Approval email chains",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Release schedules",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Migration logs",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change management reports",
+        "Approval email chains",
+        "Release schedules",
+        "Migration logs"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "potentialMissingEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing"
+      ],
+      "controlGaps": [
+        "Control conclusion does not clearly indicate operating effectiveness"
+      ],
+      "recommendedRemediation": [
+        "Obtain missing evidence and retest impacted sample items"
+      ],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "user access review",
+        "manager certification",
+        "IAM",
+        "quarterly review",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CRQ-2026-3150",
+        "IAM",
+        "ITGC",
+        "Identity and Access Management",
+        "Periodic User Access Review",
+        "access remediation",
+        "manager certification",
+        "quarterly review",
+        "user access review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "The CRB review and approval process was consistently followed for the samples tested.",
+      "operatingEffectively": false,
+      "exceptionsIdentified": null,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-020",
+    "sourceDocument": "User_Access_Review_Variation_4.docx",
+    "documentTitle": "User Access Review - Variation 4",
+    "control": {
+      "controlId": "IAM-UAR-001",
+      "controlName": "Periodic User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "frequency": "Per Change",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "IAM Platform",
+      "applicationType": "Access Governance",
+      "environment": "Production Applications",
+      "supportingSystems": [
+        "IAM Certification Workflow",
+        "Ticketing Tool",
+        "Application Role Listing"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Through inquiry and walkthrough procedures performed with the DevOps Manager, the audit team understood that all high-risk and normal production changes require CRB sign-off prior to migration into the production environment.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Reviewed the list of normal and emergency changes.",
+        "Selected sample changes based on risk and criticality.",
+        "Verified documented CRB approvals before implementation.",
+        "Inspected evidence supporting testing and migration approvals.",
+        "Validated completion evidence within the ITSM system."
+      ],
+      "testingPerformedNarrative": "The audit team reviewed sample production change CHG-2026-4412 and verified that testing evidence, rollback procedures, and CRB approval were documented before the deployment window commenced.",
+      "sampledItems": [
+        "CHG-2026-4412"
+      ],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "Change request forms",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "System-generated approval history",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Production release evidence",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Rollback plans",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "Change request forms",
+        "System-generated approval history",
+        "Production release evidence",
+        "Rollback plans"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "potentialMissingEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing"
+      ],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "user access review",
+        "manager certification",
+        "IAM",
+        "quarterly review",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "CHG-2026-4412",
+        "IAM",
+        "ITGC",
+        "Identity and Access Management",
+        "Periodic User Access Review",
+        "access remediation",
+        "manager certification",
+        "quarterly review",
+        "user access review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "Based on evidence inspected and testing performed, the control was operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  },
+  {
+    "workpaperId": "WP-021",
+    "sourceDocument": "user_access_review_workpaper.docx",
+    "documentTitle": "User Access Review Workpaper",
+    "control": {
+      "controlId": "IAM-UAR-001",
+      "controlName": "Periodic User Access Review",
+      "domain": "Identity and Access Management",
+      "subDomain": "Application Access Review",
+      "objective": "To ensure user access rights are periodically reviewed and validated by management to maintain appropriate access levels.",
+      "frequency": "Quarterly",
+      "controlNature": "Manual review control with system-generated evidence",
+      "keyControl": true
+    },
+    "systemContext": {
+      "primarySystem": "IAM Platform",
+      "applicationType": "Access Governance",
+      "environment": "Production Applications",
+      "supportingSystems": [
+        "IAM Certification Workflow",
+        "Ticketing Tool",
+        "Application Role Listing"
+      ]
+    },
+    "auditMetadata": {
+      "auditYear": 2026,
+      "auditPeriod": "FY2026",
+      "frameworks": [
+        "SOX ITGC",
+        "SOC 2",
+        "Access Management"
+      ],
+      "preparedForUseCase": "RAG retrieval, reasoning agent testing, gap analysis, and control comparison",
+      "sourceType": "Historical workpaper",
+      "dataType": "Synthetic audit training data"
+    },
+    "controlDesign": {
+      "designUnderstanding": "Application owners receive quarterly access review reports generated from the IAM system. Managers validate whether users retain appropriate access based on current job responsibilities.",
+      "processOwnerInterviewed": "Inferred from workpaper narrative",
+      "designAttributes": [
+        "Control owner performs review or approval activity",
+        "Evidence is retained in system workflow, report, screenshot, ticket, or approval record",
+        "Auditor validates timing, completeness, and appropriateness of evidence"
+      ]
+    },
+    "testing": {
+      "testSteps": [
+        "Obtained quarterly access review reports.",
+        "Selected sample users.",
+        "Verified management sign-off.",
+        "Checked whether inappropriate access was removed timely."
+      ],
+      "testingPerformedNarrative": "For the Q2 2026 access review, management identified one transferred employee with elevated access. Access was removed within two business days.",
+      "sampledItems": [],
+      "samplingApproach": "Sample-based audit testing",
+      "testingFocus": [
+        "Completeness of evidence",
+        "Appropriateness of reviewer or approver",
+        "Timeliness of action",
+        "Consistency between source records and evidence"
+      ]
+    },
+    "evidence": {
+      "actualEvidenceInspected": [
+        "IAM access review reports",
+        "Manager approvals",
+        "User role listings",
+        "Access removal tickets"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "evidenceMapping": [
+        {
+          "evidenceName": "IAM access review reports",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Manager approvals",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "User role listings",
+          "purpose": "Supports auditor validation of control execution"
+        },
+        {
+          "evidenceName": "Access removal tickets",
+          "purpose": "Supports auditor validation of control execution"
+        }
+      ]
+    },
+    "risk": {
+      "riskStatement": "Users may retain inappropriate or excessive access if periodic reviews are not completed and remediated.",
+      "riskCategory": "Logical Access",
+      "inherentRiskRating": "Medium",
+      "impactAreas": [
+        "Security",
+        "Operations",
+        "Compliance"
+      ]
+    },
+    "gapAnalysisFields": {
+      "actualEvidence": [
+        "IAM access review reports",
+        "Manager approvals",
+        "User role listings",
+        "Access removal tickets"
+      ],
+      "expectedEvidence": [
+        "IAM access review report",
+        "Manager approval",
+        "User role listing",
+        "Access removal ticket",
+        "Review completion evidence"
+      ],
+      "potentialMissingEvidence": [],
+      "controlGaps": [],
+      "recommendedRemediation": [],
+      "completenessAssessment": "Complete for baseline control testing"
+    },
+    "retrieval": {
+      "retrievalTags": [
+        "user access review",
+        "manager certification",
+        "IAM",
+        "quarterly review",
+        "access remediation",
+        "ITGC"
+      ],
+      "searchKeywords": [
+        "IAM",
+        "ITGC",
+        "Identity and Access Management",
+        "Periodic User Access Review",
+        "access remediation",
+        "manager certification",
+        "quarterly review",
+        "user access review"
+      ],
+      "chunkingRecommendation": {
+        "preferredChunkBy": [
+          "controlDesign",
+          "testing",
+          "evidence",
+          "gapAnalysisFields"
+        ],
+        "recommendedForVectorSearch": true
+      }
+    },
+    "auditConclusion": {
+      "conclusionNarrative": "The user access review control appears to be operating effectively.",
+      "operatingEffectively": true,
+      "exceptionsIdentified": 0,
+      "reviewStatus": "Ready for reasoning-agent ingestion"
+    }
+  }
+]
