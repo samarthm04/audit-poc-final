@@ -2,16 +2,10 @@
 
 import logging
 import os
-import sys
-
-try:
-    import pysqlite3  # type: ignore
-
-    sys.modules["sqlite3"] = pysqlite3
-except ImportError:
-    pass
 
 import chromadb
+
+from chroma_client import get_chroma_client
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +45,7 @@ _CONTROL_SUBTYPE_KEYWORDS: list[tuple[str, str]] = [
 def _get_client() -> chromadb.PersistentClient:
     """Create the chroma_db directory if absent and return a persistent client."""
     os.makedirs(_CHROMA_PATH, exist_ok=True)
-    return chromadb.PersistentClient(path=_CHROMA_PATH)
+    return get_chroma_client()
 
 
 def _get_collection(client: chromadb.PersistentClient) -> chromadb.Collection:

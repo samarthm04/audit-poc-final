@@ -49,9 +49,16 @@ Add this in Streamlit app secrets:
 
 ```toml
 MISTRAL_API_KEY = "your-real-mistral-key"
+
+# Optional but recommended for permanent uploaded-workpaper retention.
+# Without these, Streamlit Cloud uses local app storage, which can reset.
+CHROMA_API_KEY = "your-chroma-cloud-api-key"
+CHROMA_TENANT = "your-chroma-tenant"
+CHROMA_DATABASE = "your-chroma-database"
+# CHROMA_HOST = "europe-west1.gcp.trychroma.com" # Only for non-default region
 ```
 
-The deployed app seeds ChromaDB from `data/workpapers_remote_converted.json` on first startup, so no checked-in `chroma_db/` folder is required.
+The deployed app seeds ChromaDB from `data/workpapers_remote_converted.json` on first startup, so no checked-in `chroma_db/` folder is required. When Chroma Cloud secrets are configured, uploaded workpapers are retained in Chroma Cloud across app restarts and redeploys.
 
 ## Running tests
 

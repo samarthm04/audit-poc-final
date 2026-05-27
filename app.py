@@ -4,25 +4,17 @@ from __future__ import annotations
 
 import json
 import logging
-import sys
 from io import BytesIO
 from pathlib import Path
 from typing import Any
 
-try:
-    import pysqlite3  # type: ignore
-
-    sys.modules["sqlite3"] = pysqlite3
-except ImportError:
-    pass
-
-import chromadb
 import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
 
 from agents import llm_agent, supervisor_agent  # noqa: E402
+from chroma_client import get_chroma_client  # noqa: E402
 
 try:
     from docx import Document
@@ -52,7 +44,7 @@ st.set_page_config(page_title="Audit Workpaper Intelligence Assistant", layout="
 
 @st.cache_resource
 def get_collection():
-    client = chromadb.PersistentClient(path=CHROMA_PATH)
+    client = get_chroma_client()
     collection = client.get_or_create_collection(COLLECTION_NAME)
     seed_collection_if_empty(collection)
     return collection

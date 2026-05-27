@@ -39,6 +39,15 @@ def _get_streamlit_secret(name: str) -> str | None:
 
 
 MISTRAL_API_KEY: str | None = os.getenv("MISTRAL_API_KEY") or _get_streamlit_secret("MISTRAL_API_KEY")
+CHROMA_API_KEY: str | None = os.getenv("CHROMA_API_KEY") or _get_streamlit_secret("CHROMA_API_KEY")
+CHROMA_TENANT: str | None = os.getenv("CHROMA_TENANT") or _get_streamlit_secret("CHROMA_TENANT")
+CHROMA_DATABASE: str | None = os.getenv("CHROMA_DATABASE") or _get_streamlit_secret("CHROMA_DATABASE")
+CHROMA_HOST: str | None = os.getenv("CHROMA_HOST") or _get_streamlit_secret("CHROMA_HOST")
 
 if MISTRAL_API_KEY is None:
     logger.warning("MISTRAL_API_KEY is not set — LLM calls will use mock responses")
+
+USE_CHROMA_CLOUD = bool(CHROMA_API_KEY and CHROMA_TENANT and CHROMA_DATABASE)
+
+if not USE_CHROMA_CLOUD:
+    logger.warning("Chroma Cloud secrets are not set — using local Chroma persistence")
