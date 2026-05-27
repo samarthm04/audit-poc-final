@@ -37,6 +37,22 @@ python scripts/ingest_workpapers.py --reset
 streamlit run app.py
 ```
 
+## Streamlit Community Cloud deployment
+
+Deploy from:
+
+- Repository: `samarthm04/audit-poc-final`
+- Branch: `main`
+- Main file path: `app.py`
+
+Add this in Streamlit app secrets:
+
+```toml
+MISTRAL_API_KEY = "your-real-mistral-key"
+```
+
+The deployed app seeds ChromaDB from `data/workpapers_remote_converted.json` on first startup, so no checked-in `chroma_db/` folder is required.
+
 ## Running tests
 
 ```bash

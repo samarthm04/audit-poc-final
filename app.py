@@ -4,8 +4,17 @@ from __future__ import annotations
 
 import json
 import logging
+import sys
 from io import BytesIO
+from pathlib import Path
 from typing import Any
+
+try:
+    import pysqlite3  # type: ignore
+
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass
 
 import chromadb
 import streamlit as st
@@ -25,6 +34,7 @@ logging.basicConfig(level=logging.INFO)
 
 CHROMA_PATH = "./chroma_db"
 COLLECTION_NAME = "audit_workpapers"
+SEED_DATA_FILE = Path(__file__).resolve().parent / "data" / "workpapers_remote_converted.json"
 SECTION_LABELS = ("PRESENT STEPS", "MISSING STEPS", "EVIDENCE GAPS", "AUGMENTED PROCEDURE")
 REQUIRED_COMPLETENESS_TERMS = {
     "Control Design": ("control design", "design", "control objective"),
@@ -43,7 +53,45 @@ st.set_page_config(page_title="Audit Workpaper Intelligence Assistant", layout="
 @st.cache_resource
 def get_collection():
     client = chromadb.PersistentClient(path=CHROMA_PATH)
-    return client.get_or_create_collection(COLLECTION_NAME)
+    collection = client.get_or_create_collection(COLLECTION_NAME)
+    seed_collection_if_empty(collection)
+    return collection
+
+
+def build_seed_document(wp: dict[str, Any]) -> str:
+    control = wp.get("control", {})
+    design = control.get("controlDesign", {})
+    artifact = wp.get("testArtifact", {})
+    steps = " ".join(artifact.get("testSteps", []))
+    evidence = " ".join(artifact.get("evidenceRequired", []))
+    risk = wp.get("risk", {})
+    return " ".join(
+        [
+            str(control.get("type", "")),
+            str(control.get("subType", "")),
+            str(control.get("objective", "")),
+            str(design.get("description", "")),
+            steps,
+            evidence,
+            str(risk.get("statement", "")),
+        ]
+    )
+
+
+def seed_collection_if_empty(collection) -> None:
+    try:
+        if collection.count() > 0 or not SEED_DATA_FILE.exists():
+            return
+        with open(SEED_DATA_FILE, encoding="utf-8") as f:
+            workpapers = json.load(f)
+        collection.add(
+            ids=[wp["id"] for wp in workpapers],
+            documents=[build_seed_document(wp) for wp in workpapers],
+            metadatas=[metadata_for_workpaper(wp) for wp in workpapers],
+        )
+        logging.info("Seeded %d workpapers into ChromaDB", len(workpapers))
+    except Exception as exc:  # noqa: BLE001
+        logging.warning("Could not seed ChromaDB collection: %s", exc)
 
 
 def init_state() -> None:

@@ -2,6 +2,14 @@
 
 import logging
 import os
+import sys
+
+try:
+    import pysqlite3  # type: ignore
+
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass
 
 import chromadb
 

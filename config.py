@@ -29,7 +29,16 @@ for _p in _CANDIDATES:
 if not loaded:
     load_dotenv()
 
-MISTRAL_API_KEY: str | None = os.getenv("MISTRAL_API_KEY") or None
+def _get_streamlit_secret(name: str) -> str | None:
+    try:
+        import streamlit as st  # noqa: PLC0415
+
+        return st.secrets.get(name)
+    except Exception:
+        return None
+
+
+MISTRAL_API_KEY: str | None = os.getenv("MISTRAL_API_KEY") or _get_streamlit_secret("MISTRAL_API_KEY")
 
 if MISTRAL_API_KEY is None:
     logger.warning("MISTRAL_API_KEY is not set — LLM calls will use mock responses")

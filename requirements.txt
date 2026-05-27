@@ -5,3 +5,4 @@ python-dotenv
 pytest
 pytest-mock
 python-docx
+pysqlite3-binary
